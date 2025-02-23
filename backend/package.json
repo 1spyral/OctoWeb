@@ -9,10 +9,15 @@
   },
   "dependencies": {
     "@octokit/graphql": "^8.2.1",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "graphql": "^16.10.0",
+    "graphql-http": "^1.22.4",
     "typescript": "^5.7.3"
   },
   "devDependencies": {
+    "@types/express": "^5.0.0",
+    "prisma": "^6.4.1",
     "tsx": "^4.19.3"
   }
 }
