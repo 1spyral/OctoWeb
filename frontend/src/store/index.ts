@@ -1,2 +1,2 @@
-export { default as uiStore } from "./uiStore.ts"
-export { default as userStore } from "./userStore.ts"
+export { default as uiStore } from "./uiStore"
+export { default as userStore } from "./userStore"
