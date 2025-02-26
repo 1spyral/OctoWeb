@@ -2,7 +2,9 @@ import { Layout } from "./components/layout/"
 
 export default function App() {
   return (
-    <Layout />
+    <div className="h-screen w-full">
+      <Layout />
+    </div>
   )
 }
 
