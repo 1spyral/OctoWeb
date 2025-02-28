@@ -1,3 +1,1 @@
-import userRouter from "@user/user.routes"
-
-export default userRouter
+export { default } from "@user/user.routes"
