@@ -8,7 +8,7 @@ export default function Rightbar() {
         <aside
             className={`relative flex-shrink-0 overflow-visible bg-gray-200 transition-all duration-300 ${isCollapsed ? "w-0" : "w-[250px]"} `}
         >
-            <div className="h-full w-[250px] overflow-y-auto p-4">
+            <div className="scrollbar-hide h-full w-[250px] overflow-y-auto p-4">
                 <Dropdown
                     title="Dropdown"
                     children={[<div>Hi</div>, <div>Ok</div>]}
@@ -36,7 +36,7 @@ export default function Rightbar() {
                         <div>Ok</div>,
                         <div>Ok</div>,
                         <div>Ok</div>,
-                        <div>Ok</div>,
+                        <div>Ok</div>
                     ]}
                 />
                 <Dropdown

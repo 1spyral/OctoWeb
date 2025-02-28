@@ -5,7 +5,7 @@ import * as React from "react"
 
 export default function Dropdown({
     title,
-    children,
+    children
 }: {
     title: string
     children: React.ReactNode[]
@@ -27,7 +27,7 @@ export default function Dropdown({
                 initial={{ height: 0, opacity: 0 }}
                 animate={{
                     height: isOpen ? "auto" : 0,
-                    opacity: isOpen ? 1 : 0,
+                    opacity: isOpen ? 1 : 0
                 }}
                 exit={{ height: 0, opacity: 0 }}
                 className="overflow-hidden"

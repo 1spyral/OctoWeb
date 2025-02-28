@@ -6,5 +6,5 @@ interface UserState {
 
 export default create<UserState>(set => ({
     username: "",
-    setUsername: (username: string) => set({ username }),
+    setUsername: (username: string) => set({ username })
 }))

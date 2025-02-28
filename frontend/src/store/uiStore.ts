@@ -8,5 +8,5 @@ interface UIState {
 export default create<UIState>(set => ({
     theme: "light",
     toggleTheme: () =>
-        set(state => ({ theme: state.theme === "light" ? "dark" : "light" })),
+        set(state => ({ theme: state.theme === "light" ? "dark" : "light" }))
 }))
