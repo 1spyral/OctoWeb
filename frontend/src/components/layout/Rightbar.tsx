@@ -1,29 +1,50 @@
 import { useState } from "react"
+import Dropdown from "../ui/Dropdown.tsx"
 
 export default function Rightbar() {
     const [isCollapsed, setIsCollapsed] = useState(false)
 
     return (
         <aside
-            className={`
-                relative bg-gray-200 overflow-visible flex-shrink-0 transition-all duration-300
-                ${isCollapsed ? "w-0" : "w-[250px]"}
-            `}
+            className={`relative flex-shrink-0 overflow-visible bg-gray-200 transition-all duration-300 ${isCollapsed ? "w-0" : "w-[250px]"} `}
         >
-            <div className="w-[250px] p-4">
-                <h2 className="text-lg font-medium">Right Sidebar</h2>
-                <ul className="mt-4 space-y-2">
-                    <li className="p-2 bg-gray-300 rounded">Widget 1</li>
-                    <li className="p-2 bg-gray-300 rounded">Widget 2</li>
-                    <li className="p-2 bg-gray-300 rounded">Widget 3</li>
-                </ul>
+            <div className="h-full w-[250px] overflow-y-auto p-4">
+                <Dropdown
+                    title="Dropdown"
+                    children={[<div>Hi</div>, <div>Ok</div>]}
+                />
+                <Dropdown
+                    title="Dropdown"
+                    children={[
+                        <div>Hi</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                        <div>Ok</div>,
+                    ]}
+                />
+                <Dropdown
+                    title="Dropdown"
+                    children={[<div>Hi</div>, <div>Ok</div>]}
+                />
                 <div
-                    className={`
-                        absolute top-1/2 -translate-y-1/2 bg-gray-500 text-white w-6 h-12
-                        flex items-center justify-center rounded-l cursor-pointer
-                        transition-all duration-300 z-20 left-0
-                        ${isCollapsed ? "-translate-x-6" : "-translate-x-full"}
-                    `}
+                    className={`absolute top-1/2 left-0 z-20 flex h-12 w-6 -translate-y-1/2 cursor-pointer items-center justify-center rounded-l bg-gray-500 text-white transition-all duration-300 ${isCollapsed ? "-translate-x-6" : "-translate-x-full"} `}
                     onClick={() => setIsCollapsed(!isCollapsed)}
                 >
                     {isCollapsed ? "<" : ">"}
