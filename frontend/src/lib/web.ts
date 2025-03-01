@@ -22,12 +22,24 @@ export default class Web {
         let accelY = 0
 
         for (let j = 0; j < index; j++) {
-            accelX += REPULSION / (node.x - this.nodes[j].x) / Math.abs(node.x - this.nodes[j].x)
-            accelY += REPULSION / (node.y - this.nodes[j].y) / Math.abs(node.y - this.nodes[j].y)
+            accelX +=
+                REPULSION /
+                (node.x - this.nodes[j].x) /
+                Math.abs(node.x - this.nodes[j].x)
+            accelY +=
+                REPULSION /
+                (node.y - this.nodes[j].y) /
+                Math.abs(node.y - this.nodes[j].y)
         }
         for (let j = index + 1; j < this.nodes.length; j++) {
-            accelX += REPULSION / (node.x - this.nodes[j].x) / Math.abs(node.x - this.nodes[j].x)
-            accelY += REPULSION / (node.y - this.nodes[j].y) / Math.abs(node.y - this.nodes[j].y)
+            accelX +=
+                REPULSION /
+                (node.x - this.nodes[j].x) /
+                Math.abs(node.x - this.nodes[j].x)
+            accelY +=
+                REPULSION /
+                (node.y - this.nodes[j].y) /
+                Math.abs(node.y - this.nodes[j].y)
         }
 
         node.velocityX += accelX

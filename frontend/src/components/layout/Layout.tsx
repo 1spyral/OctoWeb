@@ -1,4 +1,5 @@
 import { Navbar, Leftbar, Rightbar } from "@/components/layout"
+import { Web } from "@/components/web"
 
 export default function Layout() {
     return (
@@ -6,9 +7,7 @@ export default function Layout() {
             <Navbar />
             <div className="flex flex-1 overflow-hidden">
                 <Leftbar />
-                <div className="bg-bg-primary dark:bg-dark-bg-primary flex-1">
-                    Content
-                </div>
+                <Web />
                 <Rightbar />
             </div>
         </div>
