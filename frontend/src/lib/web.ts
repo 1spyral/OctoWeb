@@ -1,4 +1,4 @@
-import Node from "./node.ts"
+import Node from "@/lib/node.ts"
 
 export default class Web {
     nodes: Node[]

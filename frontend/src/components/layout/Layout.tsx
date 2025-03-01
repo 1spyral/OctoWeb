@@ -1,6 +1,4 @@
-import Navbar from "./Navbar.tsx"
-import Leftbar from "./Leftbar.tsx"
-import Rightbar from "./Rightbar.tsx"
+import { Navbar, Leftbar, Rightbar } from "@/components/layout"
 
 export default function Layout() {
     return (

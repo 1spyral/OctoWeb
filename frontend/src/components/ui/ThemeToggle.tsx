@@ -1,4 +1,4 @@
-import { uiStore } from "../../store"
+import { uiStore } from "@/store"
 import { MoonIcon, SunIcon } from "@primer/octicons-react"
 
 export default function ThemeToggle() {

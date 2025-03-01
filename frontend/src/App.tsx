@@ -1,5 +1,5 @@
-import { Layout } from "./components/layout/"
-import { ThemeProvider } from "./store/uiStore.ts"
+import { Layout } from "@/components/layout"
+import { ThemeProvider } from "@/store/uiStore.ts"
 
 export default function App() {
     return (
