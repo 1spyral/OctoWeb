@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @config "../tailwind.config.ts";
 
+@theme {
+    --color-bg-primary: #ffffff; --color-dark-bg-primary: #010409;
+    --color-bg-secondary: #f6f8fa; --color-dark-bg-secondary: #0d1117;
+    --color-text-primary: #1f2328; --color-dark-text-primary: #f0f6fc;
+}
+
 html,
 body,
 #root {

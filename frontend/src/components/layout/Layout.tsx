@@ -8,7 +8,9 @@ export default function Layout() {
             <Navbar />
             <div className="flex flex-1 overflow-hidden">
                 <Leftbar />
-                <div className="flex-1">Content</div>
+                <div className="bg-bg-primary dark:bg-dark-bg-primary flex-1">
+                    Content
+                </div>
                 <Rightbar />
             </div>
         </div>

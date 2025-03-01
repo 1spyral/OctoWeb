@@ -13,9 +13,9 @@ export default function Dropdown({
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <div className="rounded-lg border bg-white shadow-md">
+        <div className="bg-bg-primary dark:bg-dark-bg-primary rounded-lg border shadow-md">
             <button
-                className="flex w-full items-center justify-between bg-gray-100 p-3 text-lg font-semibold hover:bg-gray-200"
+                className="bg-bg-secondary dark:bg-dark-bg-secondary hover:bg-bg-primary hover:dark:bg-dark-bg-primary flex w-full items-center justify-between p-3 text-lg font-semibold"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 {title}
@@ -32,7 +32,7 @@ export default function Dropdown({
                 exit={{ height: 0, opacity: 0 }}
                 className="overflow-hidden"
             >
-                <div className="border-t bg-white p-2">{children}</div>
+                <div className="border-t p-2">{children}</div>
             </motion.div>
         </div>
     )
