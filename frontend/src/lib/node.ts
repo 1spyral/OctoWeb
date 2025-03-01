@@ -16,28 +16,4 @@ export default class Node {
         this.velocityX = 0
         this.velocityY = 0
     }
-
-    addFriend(friend: Node) {
-        this.friends.push(friend)
-    }
-
-    setFriends(friends: Node[]) {
-        this.friends = friends
-    }
-
-    setX(x: number) {
-        this.x = x
-    }
-
-    setY(y: number) {
-        this.y = y
-    }
-
-    setVelocityX(velocityX: number) {
-        this.velocityX = velocityX
-    }
-
-    setVelocityY(velocityY: number) {
-        this.velocityY = velocityY
-    }
 }
