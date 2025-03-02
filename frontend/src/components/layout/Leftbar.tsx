@@ -3,7 +3,7 @@ import { userStore } from "@/store"
 import { useState } from "react"
 import * as React from "react"
 
-export default function Leftbar() {
+export default function LeftBar() {
     const [width, setWidth] = useState(250)
     const { username } = userStore()
 

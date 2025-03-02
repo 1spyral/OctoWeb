@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Dropdown } from "@/components/ui"
 
-export default function Rightbar() {
+export default function RightBar() {
     const [isCollapsed, setIsCollapsed] = useState(false)
 
     return (
