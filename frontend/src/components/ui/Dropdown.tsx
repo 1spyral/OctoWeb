@@ -13,9 +13,19 @@ export default function Dropdown({
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <div className="bg-bg-primary dark:bg-dark-bg-primary rounded-lg border shadow-md">
+        <motion.div
+            className="rounded-lg border shadow-md"
+            initial={{ backgroundColor: "var(--bg-primary)", opacity: 0 }}
+            animate={{
+                backgroundColor: isOpen
+                    ? "var(--bg-secondary)"
+                    : "var(--bg-primary)",
+                opacity: 1
+            }}
+            transition={{ duration: 0.3 }}
+        >
             <button
-                className="bg-bg-secondary dark:bg-dark-bg-secondary hover:bg-bg-primary hover:dark:bg-dark-bg-primary flex w-full items-center justify-between p-3 text-lg font-semibold"
+                className="flex w-full items-center justify-between bg-bg-secondary p-3 text-lg font-semibold transition-colors duration-300 hover:bg-bg-primary dark:bg-dark-bg-secondary hover:dark:bg-dark-bg-primary"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 {title}
@@ -31,9 +41,10 @@ export default function Dropdown({
                 }}
                 exit={{ height: 0, opacity: 0 }}
                 className="overflow-hidden"
+                transition={{ duration: 0.3 }} // Keep the duration in sync with the outer transitions
             >
                 <div className="border-t p-2">{children}</div>
             </motion.div>
-        </div>
+        </motion.div>
     )
 }

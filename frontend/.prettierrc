@@ -1,7 +1,10 @@
 {
-    "plugins": ["prettier-plugin-tailwindcss"],
     "semi": false,
     "tabWidth": 4,
     "arrowParens": "avoid",
-    "trailingComma": "none"
+    "trailingComma": "none",
+    "plugins": ["prettier-plugin-tailwindcss"],
+
+    "tailwindStylesheet": "./src/index.css",
+    "tailwindConfig": "./tailwind.config.ts"
 }

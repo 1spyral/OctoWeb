@@ -6,7 +6,7 @@ export default function Rightbar() {
 
     return (
         <aside
-            className={`bg-bg-secondary dark:bg-dark-bg-secondary relative flex-shrink-0 overflow-visible transition-[width] duration-300 ${isCollapsed ? "w-0" : "w-[250px]"} `}
+            className={`relative flex-shrink-0 overflow-visible bg-bg-secondary transition-[width] transition-colors duration-300 dark:bg-dark-bg-secondary ${isCollapsed ? "w-0" : "w-[250px]"} `}
         >
             <div className="scrollbar-hide h-full w-[250px] overflow-y-auto p-4">
                 <Dropdown

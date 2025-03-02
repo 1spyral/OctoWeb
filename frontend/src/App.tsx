@@ -1,11 +1,11 @@
 import { Layout } from "@/components/layout"
-import { ThemeProvider } from "@/store/uiStore.ts"
+import { DarkModeProvider } from "@/store/uiStore.ts"
 
 export default function App() {
     return (
         <>
-            <ThemeProvider />
-            <div className="bg-bg-primary dark:bg-dark-bg-primary text-text-primary dark:text-dark-text-primary h-screen w-full transition-colors duration-300">
+            <DarkModeProvider />
+            <div className="h-screen w-full bg-bg-primary text-text-primary transition-colors duration-300 dark:bg-dark-bg-primary dark:text-dark-text-primary">
                 <Layout />
             </div>
         </>

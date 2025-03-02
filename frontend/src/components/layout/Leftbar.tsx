@@ -24,7 +24,7 @@ export default function Leftbar() {
 
     return (
         <aside
-            className="bg-bg-secondary dark:bg-dark-bg-secondary relative overflow-y-auto p-4"
+            className={`relative overflow-y-auto bg-bg-secondary p-4 transition-colors duration-300 dark:bg-dark-bg-secondary`}
             style={{ width: `${width}px` }}
         >
             <h2 className="text-lg font-medium">{username}</h2>

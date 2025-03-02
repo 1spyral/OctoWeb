@@ -2,30 +2,38 @@ import { useEffect } from "react"
 import { create } from "zustand/react"
 
 interface UIState {
-    theme: "light" | "dark"
-    toggleTheme: () => void
+    darkMode: boolean
+    toggleDarkMode: () => void
 }
 
-const useUIStore = create<UIState>(set => ({
-    theme: localStorage.getItem("theme") === "dark" ? "dark" : "light",
-    toggleTheme: () =>
-        set(state => {
-            const newTheme = state.theme === "light" ? "dark" : "light"
-            document.documentElement.classList.toggle(
-                "dark",
-                newTheme === "dark"
-            )
-            localStorage.setItem("theme", newTheme)
-            return { theme: newTheme }
-        })
-}))
+const useUIStore = create<UIState>(set => {
+    const systemDarkMode = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+    ).matches
+    const savedDarkMode = localStorage.getItem("theme")
 
-export const ThemeProvider = () => {
-    const theme = useUIStore(state => state.theme)
+    return {
+        darkMode: savedDarkMode ? savedDarkMode === "dark" : systemDarkMode,
+        toggleDarkMode: () =>
+            set(state => {
+                const newDarkMode = state.darkMode ? "light" : "dark"
+                document.documentElement.classList.toggle(
+                    "dark",
+                    newDarkMode === "dark"
+                )
+                localStorage.setItem("theme", newDarkMode)
+                return { darkMode: newDarkMode === "dark" }
+            })
+    }
+})
+
+// For loading dark mode on page load
+export const DarkModeProvider = () => {
+    const darkMode = useUIStore(state => state.darkMode)
 
     useEffect(() => {
-        document.documentElement.classList.toggle("dark", theme === "dark")
-    }, [theme])
+        document.documentElement.classList.toggle("dark", darkMode)
+    }, [darkMode])
 
     return null
 }
