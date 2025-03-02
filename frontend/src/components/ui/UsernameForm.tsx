@@ -1,10 +1,11 @@
-import { userStore } from "@/store"
+import { userStore, webStore } from "@/store"
 import { useState } from "react"
 import * as React from "react"
 
 export default function UsernameForm() {
     const [usernameField, setUsernameField] = useState("")
     const { setUsername } = userStore()
+    const { initWeb } = webStore()
 
     function handleUsernameChange(e: React.ChangeEvent<HTMLInputElement>) {
         setUsernameField(e.target.value)
@@ -13,6 +14,7 @@ export default function UsernameForm() {
     function handleUsernameSubmit() {
         if (usernameField.trim()) {
             setUsername(usernameField)
+            initWeb(usernameField)
         }
     }
 

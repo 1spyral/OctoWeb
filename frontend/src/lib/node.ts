@@ -1,4 +1,6 @@
-export default class Node {
+import { REPULSION } from "@/const"
+
+export default interface Node {
     user: string
     friends: Node[]
     root: boolean
@@ -6,14 +8,29 @@ export default class Node {
     y: number
     velocityX: number
     velocityY: number
+}
 
-    constructor(user: string, friends?: Node[], root: boolean = false) {
-        this.user = user
-        this.friends = friends || []
-        this.root = root
-        this.x = 0
-        this.y = 0
-        this.velocityX = 0
-        this.velocityY = 0
+export function createNode(
+    user: string,
+    friends?: Node[],
+    root: boolean = false
+): Node {
+    return {
+        user,
+        friends: friends || [],
+        root,
+        x: 0,
+        y: 0,
+        velocityX: 0,
+        velocityY: 0
     }
+}
+
+export function findRepulsion(a: Node, b: Node): [number, number] {
+    const diffX = a.x - b.x
+    const diffY = a.y - b.y
+    return [
+        diffX ? REPULSION / diffX / Math.abs(diffX) : 0,
+        diffY ? REPULSION / diffY / Math.abs(diffY) : 0
+    ]
 }
