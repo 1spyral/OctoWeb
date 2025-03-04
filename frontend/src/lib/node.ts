@@ -12,15 +12,24 @@ export default interface Node {
 
 export function createNode(
     user: string,
-    friends?: Node[],
-    root: boolean = false
+    {
+        friends,
+        root,
+        x,
+        y
+    }: {
+        friends?: Node[]
+        root?: boolean
+        x?: number
+        y?: number
+    } = {}
 ): Node {
     return {
         user,
-        friends: friends || [],
-        root,
-        x: 0,
-        y: 0,
+        friends: friends ?? [],
+        root: root ?? false,
+        x: x ?? 0,
+        y: y ?? 0,
         velocityX: 0,
         velocityY: 0
     }
