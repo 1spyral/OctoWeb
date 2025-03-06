@@ -10,7 +10,7 @@ export default function ThemeToggle() {
             className={`relative inline-flex h-10 w-20 cursor-pointer items-center rounded-full ${
                 darkMode
                     ? "bg-gradient-to-r from-purple-700 to-blue-900"
-                    : "bg-gradient-to-r from-yellow-400 to-yellow-500"
+                    : "bg-gradient-to-r from-yellow-400 to-orange-600"
             }`}
         >
             <div
@@ -19,7 +19,7 @@ export default function ThemeToggle() {
                 {darkMode ? (
                     <MoonIcon className="h-5 w-5 text-white" />
                 ) : (
-                    <SunIcon className="h-5 w-5 text-yellow-500" />
+                    <SunIcon className="h-5 w-5 text-white" />
                 )}
             </div>
         </div>

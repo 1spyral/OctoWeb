@@ -30,13 +30,14 @@ export default create<WebState>((set, get) => ({
             ...state,
             nodes: [
                 ...state.nodes,
-                createNode(
-                    user,
-                    {
-                        x: Math.floor(Math.random() * state.radiusX * 2 + 1) - state.radiusX,
-                        y: Math.floor(Math.random() * state.radiusY * 2 + 1) - state.radiusY
-                    }
-                )
+                createNode(user, {
+                    x:
+                        Math.floor(Math.random() * state.radiusX * 2 + 1) -
+                        state.radiusX,
+                    y:
+                        Math.floor(Math.random() * state.radiusY * 2 + 1) -
+                        state.radiusY
+                })
             ]
         }))
     }

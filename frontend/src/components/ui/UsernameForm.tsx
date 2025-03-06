@@ -25,7 +25,7 @@ export default function UsernameForm() {
                 value={usernameField}
                 onChange={handleUsernameChange}
                 placeholder="Enter username"
-                className="w-full rounded border border-gray-300 p-2"
+                className="w-full rounded border border-gray-300 p-2 text-text-primary dark:text-dark-text-primary"
             />
             <button
                 onClick={handleUsernameSubmit}

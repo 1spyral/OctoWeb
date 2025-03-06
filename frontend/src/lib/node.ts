@@ -45,10 +45,7 @@ export function findGravity(node: Node): [number, number] {
 
     const force = node.root ? ROOT_GRAVITY : GRAVITY
 
-    return [
-        force * diffX * distance,
-        force * diffY * distance
-    ]
+    return [force * diffX * distance, force * diffY * distance]
 }
 
 export function findRepulsion(a: Node, b: Node): [number, number] {
@@ -61,8 +58,5 @@ export function findRepulsion(a: Node, b: Node): [number, number] {
 
     const force = REPULSION / distanceSquared
 
-    return [
-        force * diffX / distance,
-        force * diffY / distance
-    ]
+    return [(force * diffX) / distance, (force * diffY) / distance]
 }
