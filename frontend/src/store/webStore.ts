@@ -6,6 +6,9 @@ interface WebState extends Web {
     initWeb: (user: string) => void
     updateWeb: () => void
     addNode: (user: string) => void
+
+    setRadiusX: (radiusX: number) => void
+    setRadiusY: (radiusY: number) => void
 }
 
 export default create<WebState>((set, get) => ({
@@ -40,5 +43,8 @@ export default create<WebState>((set, get) => ({
                 })
             ]
         }))
-    }
+    },
+
+    setRadiusX: radiusX => set(state => ({ ...state, radiusX })),
+    setRadiusY: radiusY => set(state => ({ ...state, radiusY }))
 }))
