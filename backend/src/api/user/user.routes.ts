@@ -1,5 +1,5 @@
 import express from "express"
-import userHandler from "@user/user.handler"
+import userHandler from "@/api/user/user.handler"
 
 const userRouter = express.Router()
 

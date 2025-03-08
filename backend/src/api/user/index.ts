@@ -1,1 +1,1 @@
-export { default } from "@user/user.routes"
+export { default } from "@/api/user/user.routes"

@@ -7,7 +7,6 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@user/*": ["src/api/user/*"],
     },
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
