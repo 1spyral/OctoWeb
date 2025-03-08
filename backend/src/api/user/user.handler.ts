@@ -1,7 +1,8 @@
 import { Request, Response } from "express"
 import { z } from "zod"
+import { userService } from "@/api/user/user"
 
-export async function get(req: Request<{}, {}, {}, getParams>, res: Response) {
+export async function getUser(req: Request<{}, {}, {}, getParams>, res: Response) {
     const validate = getParamsSchema.safeParse(req.query)
 
     if (validate.error) {
@@ -11,7 +12,7 @@ export async function get(req: Request<{}, {}, {}, getParams>, res: Response) {
 
     try {
         const { username } = validate.data
-        const user = { message: `Fetched user ${username}` }
+        const user = await userService.getUser(username)
         res.status(200).json(user)
     } catch (error: any) {
         res.status(500).json({ error: error.message })
@@ -24,5 +25,5 @@ const getParamsSchema = z.object({
 interface getParams extends z.infer<typeof getParamsSchema> {}
 
 export default {
-    get
+    getUser
 }
