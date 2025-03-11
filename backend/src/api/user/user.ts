@@ -26,8 +26,6 @@ export const userService = {
             }
         )
 
-        console.log(user)
-
         return user
     }
 }
