@@ -1,6 +1,7 @@
 import { GRAVITY, REPULSION, ROOT_GRAVITY } from "@/const"
+import { webStore } from "@/store"
 
-export default interface Node {
+export interface Node {
     user: string
     friends: Node[]
     root: boolean
@@ -24,12 +25,16 @@ export function createNode(
         y?: number
     } = {}
 ): Node {
+    const { radiusX, radiusY } = webStore.getState()
+
     return {
         user,
         friends: friends ?? [],
         root: root ?? false,
-        x: x ?? 0,
-        y: y ?? 0,
+        x: x ?? Math.floor(Math.random() * radiusX * 2 + 1) -
+            radiusX,
+        y: y ?? Math.floor(Math.random() * radiusY * 2 + 1) -
+            radiusY,
         velocityX: 0,
         velocityY: 0
     }

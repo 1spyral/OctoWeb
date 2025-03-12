@@ -1,4 +1,3 @@
-import { userService } from "@/services/userService"
 import { userStore, webStore } from "@/store"
 import { useState } from "react"
 import * as React from "react"
@@ -13,7 +12,6 @@ export default function UsernameForm() {
     }
 
     async function handleUsernameSubmit() {
-        console.log(await userService.getUser(usernameField))
         if (usernameField.trim()) {
             setUsername(usernameField)
             initWeb(usernameField)

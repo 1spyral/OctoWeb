@@ -1,7 +1,7 @@
 import { FRICTION } from "@/const"
-import Node, { findGravity, findRepulsion } from "@/lib/node"
+import { Node, findGravity, findRepulsion } from "@/lib/node"
 
-export default interface Web {
+export interface Web {
     nodes: Node[]
     radiusX: number
     radiusY: number

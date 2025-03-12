@@ -1,6 +1,5 @@
 import { Node } from "@/components/web"
-import { uiStore } from "@/store"
-import webStore from "@/store/webStore"
+import { uiStore, webStore } from "@/store"
 import { useEffect, useRef } from "react"
 
 export default function Web() {

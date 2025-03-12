@@ -1,5 +1,6 @@
-import { createNode } from "@/lib/node"
-import Web, { updateNodes } from "@/lib/web"
+import { Node, createNode } from "@/lib/node"
+import { Web, updateNodes } from "@/lib/web"
+import { userService } from "@/services/userService"
 import { create } from "zustand/react"
 
 interface WebState extends Web {
@@ -16,11 +17,15 @@ export default create<WebState>((set, get) => ({
     radiusX: 300,
     radiusY: 300,
 
-    initWeb: user => {
-        set(state => ({
-            ...state,
-            nodes: [createNode(user, { root: true })]
-        }))
+    initWeb: async username => {
+        const user = await userService.getUser(username)
+        console.log(            user.followers//?.map(follower => createNode(follower.login))
+        )
+        const nodes: Node[] = [
+            createNode(user.login, { root: true }),
+            ...user.followers?.map(follower => createNode(follower.login)) ?? []
+        ]
+        set(state => ({ ...state, nodes }))
     },
 
     updateWeb: async () => {
@@ -33,14 +38,7 @@ export default create<WebState>((set, get) => ({
             ...state,
             nodes: [
                 ...state.nodes,
-                createNode(user, {
-                    x:
-                        Math.floor(Math.random() * state.radiusX * 2 + 1) -
-                        state.radiusX,
-                    y:
-                        Math.floor(Math.random() * state.radiusY * 2 + 1) -
-                        state.radiusY
-                })
+                createNode(user)
             ]
         }))
     },
